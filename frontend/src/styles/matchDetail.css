@@ -1,0 +1,199 @@
+.match-detail {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.match-detail-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent-color);
+}
+
+.match-detail-header h1 {
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.match-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.match-result-box {
+  background: #f9f9f9;
+  border-left: 4px solid #2E0854;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.match-note {
+  background: #fff4e5;
+  border-left: 4px solid #ff9800;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  color: #8a5a00;
+  margin-bottom: 1.5rem;
+}
+
+.live-section {
+  margin-top: 2rem;
+}
+
+.live-section h2 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.live-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: #fafafa;
+}
+
+.scorecard-section {
+  margin-top: 2rem;
+}
+
+.scorecard-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.scorecard-card {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.scorecard-card h3 {
+  margin: 0 0 1rem 0;
+  color: #2E0854;
+}
+
+.scorecard-block {
+  margin-bottom: 1.5rem;
+}
+
+.scorecard-block h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.scorecard-table {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.scorecard-row {
+  display: grid;
+  grid-template-columns: 2fr repeat(5, minmax(40px, 1fr));
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #fafafa;
+  border-radius: 8px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.scorecard-row span {
+  color: #444;
+}
+
+.scorecard-head {
+  background: #f0f0f0;
+  font-weight: 700;
+  color: #333;
+}
+
+.live-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.live-name {
+  font-weight: 700;
+  color: #2E0854;
+  margin: 0;
+}
+
+.live-status {
+  color: #666;
+  margin: 0;
+}
+
+.live-scores {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.score-team {
+  color: #333;
+  font-weight: 600;
+}
+
+.score-value {
+  color: #2E0854;
+  font-weight: 700;
+}
+
+.loading-inline {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .match-detail {
+    padding: 0 1rem;
+  }
+
+  .match-detail-container {
+    padding: 1.5rem;
+  }
+
+  .match-detail-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .scorecard-row {
+    grid-template-columns: 1.6fr repeat(5, minmax(32px, 1fr));
+    font-size: 0.8rem;
+  }
+}

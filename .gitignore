@@ -1,0 +1,48 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+dist/
+build/
+target/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+.parcel-cache
+.cache/
+
+# Secrets and environment files
+.env*
+!.env.example
+!.env.sample
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+*.kdbx
+
+# Local databases and dumps
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+
+# Local uploads/generated media
+uploads/
+backend/uploads/
+frontend/public/uploads/
+
+# Ignore markdown files except README
+*.md
+!README.md

@@ -1,0 +1,97 @@
+.poll-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.poll-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.poll-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.poll-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.option-text {
+  font-weight: 500;
+  color: var(--text-dark);
+  flex: 1;
+}
+
+.option-votes {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: var(--bg-light);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.vote-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.vote-btn:hover {
+  background-color: var(--primary-color);
+}
+
+.voted-msg {
+  text-align: center;
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .poll-card {
+    padding: 1.5rem;
+  }
+
+  .poll-card h3 {
+    font-size: 1.1rem;
+  }
+}

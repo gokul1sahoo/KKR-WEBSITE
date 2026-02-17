@@ -1,0 +1,253 @@
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.player-admin-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.player-admin-card:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.player-image-section {
+  position: relative;
+  background: linear-gradient(135deg, #2E0854 0%, #3B185F 100%);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-admin-image {
+  width: 110px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 3px solid #C9B037;
+  margin-bottom: 10px;
+}
+
+.upload-btn {
+  background: #C9B037;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.upload-btn:hover {
+  background: #FFD700;
+  transform: translateY(-2px);
+}
+
+.upload-btn input[type="file"] {
+  display: none;
+}
+
+.player-info-section {
+  padding: 12px;
+}
+
+.player-info-section h3 {
+  margin: 0 0 5px 0;
+  color: #2E0854;
+  font-size: 16px;
+}
+
+.player-role {
+  color: #666;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.player-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.stat-item {
+  font-size: 11px;
+  color: #333;
+}
+
+.stat-item strong {
+  color: #2E0854;
+}
+
+.player-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit, .btn-delete, .btn-save, .btn-cancel {
+  flex: 1;
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background: #2E0854;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #3B185F;
+}
+
+.btn-delete {
+  background: #ff4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #cc0000;
+}
+
+.btn-save {
+  background: #00cc00;
+  color: white;
+}
+
+.btn-save:hover {
+  background: #009900;
+}
+
+.btn-cancel {
+  background: #999;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background: #666;
+}
+
+.stats-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.stats-edit-form input {
+  padding: 7px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.stats-edit-form input:focus {
+  outline: none;
+  border-color: #2E0854;
+}
+
+.stats-edit-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.message {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.message.success {
+  background: #d4edda;
+  color: #155724;
+  border-left: 4px solid #28a745;
+}
+
+.message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+@media (max-width: 1200px) {
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  .player-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .players-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .player-image-section {
+    padding: 12px;
+  }
+
+  .player-admin-image {
+    width: 110px;
+    height: 140px;
+  }
+
+  .player-info-section {
+    padding: 12px;
+  }
+
+  .player-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .player-actions,
+  .stats-edit-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .player-admin-image {
+    width: 100px;
+    height: 125px;
+  }
+
+  .player-info-section h3 {
+    font-size: 15px;
+  }
+
+  .upload-btn,
+  .btn-edit,
+  .btn-delete,
+  .btn-save,
+  .btn-cancel {
+    width: 100%;
+  }
+}

@@ -1,0 +1,116 @@
+.user-signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2E0854 0%, #3B185F 100%);
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-signup-box {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.user-signup-box h1 {
+  text-align: center;
+  color: #2E0854;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #C9B037;
+  box-shadow: 0 0 5px rgba(201, 176, 55, 0.3);
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-left: 4px solid #c33;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2E0854;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1a0033;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #C9B037;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.login-link a:hover {
+  color: #2E0854;
+}
+
+@media (max-width: 600px) {
+  .user-signup-box {
+    padding: 30px 20px;
+  }
+
+  .user-signup-box h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}

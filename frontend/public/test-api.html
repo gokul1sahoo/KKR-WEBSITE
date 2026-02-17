@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test - KKR Players</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #2e7d32; }
+        .error { background: #c62828; }
+        .loading { background: #f57c00; }
+        #players { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+        .player-card { background: #2a0854; padding: 15px; border-radius: 8px; border: 2px solid #c9b037; }
+        .player-card h3 { margin: 5px 0; color: #ffd700; }
+        .player-card p { margin: 5px 0; }
+        button { background: #c9b037; color: #000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background: #ffd700; }
+    </style>
+</head>
+<body>
+    <h1>KKR Players API Test</h1>
+    <div id="status" class="status loading">Testing API connection...</div>
+    <button onclick="testAPI()">Test API Again</button>
+    <div id="players"></div>
+
+    <script>
+        async function testAPI() {
+            const statusDiv = document.getElementById('status');
+            const playersDiv = document.getElementById('players');
+            
+            statusDiv.className = 'status loading';
+            statusDiv.textContent = 'Fetching players...';
+            playersDiv.innerHTML = '';
+
+            try {
+                const response = await fetch('http://localhost:5000/api/players');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const players = await response.json();
+                
+                statusDiv.className = 'status success';
+                statusDiv.textContent = `✅ SUCCESS! Found ${players.length} players`;
+                
+                playersDiv.innerHTML = players.map(player => `
+                    <div class="player-card">
+                        <h3>#${player.jerseyNumber} ${player.name}</h3>
+                        <p><strong>Role:</strong> ${player.role}</p>
+                        <p><strong>Nationality:</strong> ${player.nationality}</p>
+                        <p><strong>Batting:</strong> ${player.battingStyle}</p>
+                        <p><strong>Bowling:</strong> ${player.bowlingStyle || 'N/A'}</p>
+                        ${player.statistics ? `
+                            <p><strong>Matches:</strong> ${player.statistics.matches}</p>
+                            <p><strong>Runs:</strong> ${player.statistics.runs}</p>
+                            ${player.statistics.wickets ? `<p><strong>Wickets:</strong> ${player.statistics.wickets}</p>` : ''}
+                            <p><strong>Strike Rate:</strong> ${player.statistics.strikeRate}</p>
+                        ` : ''}
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.textContent = `❌ ERROR: ${error.message}`;
+                console.error('API Test Error:', error);
+            }
+        }
+
+        // Test on page load
+        testAPI();
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+@import './AdminNews.css';
+
+.form-group select {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #2E0854;
+  box-shadow: 0 0 0 3px rgba(46, 8, 84, 0.1);
+}
+
+.matches-list {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.matches-list h2 {
+  color: #2E0854;
+  margin: 0 0 20px 0;
+}
+
+.match-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.match-item:last-child {
+  border-bottom: none;
+}
+
+.match-item:hover {
+  background: #f9f9f9;
+}
+
+.match-info h3 {
+  margin: 0 0 8px 0;
+  color: #2E0854;
+  font-size: 18px;
+}
+
+.match-meta {
+  color: #666;
+  font-size: 13px;
+  margin: 0 0 6px 0;
+}
+
+.match-result {
+  color: #333;
+  font-size: 14px;
+  margin: 0;
+}
+
+.match-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  color: #2E0854;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.match-link:hover {
+  color: #3B185F;
+}
+
+.match-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.helper-text {
+  display: block;
+  margin: 6px 0 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+@media (max-width: 1200px) {
+  .match-item {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .match-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .match-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .match-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .match-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .match-actions .btn-edit,
+  .match-actions .btn-delete {
+    flex: 1 1 45%;
+  }
+
+  .matches-list {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .match-info h3 {
+    font-size: 16px;
+  }
+
+  .match-meta {
+    font-size: 12px;
+  }
+}
